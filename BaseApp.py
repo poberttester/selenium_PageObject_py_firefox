@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from report_to_email import send_message
 
 with open('testdata.yaml') as f:
     testdata = yaml.safe_load(f)
@@ -19,11 +20,14 @@ class BasePage:
 
     def find_element(self, locator, time=10):
         try:
+            # self.logger.exception("GeekBrains")
+            # send_message("GeekBrains")
             return WebDriverWait(self.driver, time).until(expected_conditions.presence_of_element_located(locator),
                                                           message=f"элемент {locator} не найден")
-            self.logger.exception("GeekBrains")
+
         except:
             self.logger.exception("GeekBrains")
+            send_message("GeekBrains")
             return None
 
     def get_element_property(self, mode, locator, property):

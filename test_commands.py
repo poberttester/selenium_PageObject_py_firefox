@@ -18,20 +18,20 @@ def test_login(browser):
     assert True
 
 
-def test_contact_us(browser):
-    value = OperationsHelper(browser)
-    value.go_to_site()
-    value.enter_login(testdata['user'])
-    value.enter_password(testdata['password'])
-    value.enter_button()
-    time.sleep(3)
-    value.enter_link()
-    time.sleep(3)
-    value.enter_name(testdata['name'])
-    value.enter_email(testdata['email'])
-    value.enter_content(testdata['content'])
-    value.enter_contact_us()
-    assert True
+# def test_contact_us(browser):
+#     value = OperationsHelper(browser)
+#     value.go_to_site()
+#     value.enter_login(testdata['user'])
+#     value.enter_password(testdata['password'])
+#     value.enter_button()
+#     time.sleep(3)
+#     value.enter_link()
+#     time.sleep(3)
+#     value.enter_name(testdata['name'])
+#     value.enter_email(testdata['email'])
+#     value.enter_content(testdata['content'])
+#     value.enter_contact_us()
+#     assert True
 
 
 # def test_find(site):

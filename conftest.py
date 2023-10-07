@@ -8,10 +8,9 @@ with open('testdata.yaml') as f:
     testdata = yaml.safe_load(f)
 
 
-
 @pytest.fixture()
 def browser():
-    #site1 = BasePage(testdata['address'])
+    # site1 = BasePage(testdata['address'])
     service = Service(testdata['driver_path'])
     options = webdriver.FirefoxOptions()
     driver = webdriver.Firefox(service=service, options=options)
@@ -21,3 +20,4 @@ def browser():
     # time.sleep(testdata['sleep_time'])
     yield driver
     driver.quit()
+

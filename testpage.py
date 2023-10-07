@@ -1,7 +1,5 @@
 import logging
-
 import yaml
-
 from BaseApp import BasePage
 from selenium.webdriver.common.by import By
 
